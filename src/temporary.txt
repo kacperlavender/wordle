@@ -8,7 +8,7 @@ const Grid = () => {
 
   function getRandomWord() {
     const polishWords = [
-      'HORSE','AMBER','TIGER','ANGEL','OLIVE','BRAVE','MAPLE','CLOUD','DANCE','SMILE', 'MUSIC','STRORM','BEACH','FAIRY','HEART','LEMON','MAGIC','OCEAN','PEARL','QUEEN',
+      'CYTAT','RAMKA','LAMPA','SUFIT','BALET','AKORD','DETAL','DESKA','MOTYW','AKRYL',
     ];
     const randomIndex = Math.floor(Math.random() * polishWords.length);
     return polishWords[randomIndex];
@@ -61,9 +61,9 @@ const Grid = () => {
         ) {
           alert('Congratulations! You won!');
           setGameOver(true);
-          setLockedRows(Array.from({ length: 6 }, (_, i) => i + 1));
+          setLockedRows(Array.from({ length: 6 }, (_, i) => i + 1)); // Disable all rows
         } else if (!isRowCorrect && rowIndex === 6) {
-          setLockedRows((prevLockedRows) => [...prevLockedRows, rowIndex]);
+          setLockedRows((prevLockedRows) => [...prevLockedRows, rowIndex]); // Lock the last row
           alert('You lost the game. Good luck next time!');
           setGameOver(true);
         }
